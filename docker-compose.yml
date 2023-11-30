@@ -1,0 +1,12 @@
+# docker run -v /home/node/app/node_modules -v .:/home/node/app -p 3000:3000 <ID>
+version: '3'
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        ports:
+            - "3000:3000"
+        volumes:
+            - /home/node/app/node_modules
+            - .:/home/node/app
